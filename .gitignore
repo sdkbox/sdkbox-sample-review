@@ -42,3 +42,4 @@ js/frameworks/runtime-src/proj.android/libs/review_lib/bin/
 js/frameworks/runtime-src/proj.android/libs/review_lib/gen/
 js/frameworks/runtime-src/proj.android/libs/review_lib/local.properties
 js/frameworks/runtime-src/proj.android/libs/review_lib/proguard-project.txt
+js/frameworks/runtime-src/proj.android/plugin_review_res_project/
