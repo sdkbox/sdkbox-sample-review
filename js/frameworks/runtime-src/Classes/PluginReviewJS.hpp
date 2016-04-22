@@ -39,6 +39,11 @@ bool js_PluginReviewJS_PluginReview_setTitle(JSContext *cx, uint32_t argc, jsval
 JSBool js_PluginReviewJS_PluginReview_setTitle(JSContext *cx, uint32_t argc, jsval *vp);
 #endif
 #if defined(MOZJS_MAJOR_VERSION)
+bool js_PluginReviewJS_PluginReview_rate(JSContext *cx, uint32_t argc, jsval *vp);
+#elif defined(JS_VERSION)
+JSBool js_PluginReviewJS_PluginReview_rate(JSContext *cx, uint32_t argc, jsval *vp);
+#endif
+#if defined(MOZJS_MAJOR_VERSION)
 bool js_PluginReviewJS_PluginReview_init(JSContext *cx, uint32_t argc, jsval *vp);
 #elif defined(JS_VERSION)
 JSBool js_PluginReviewJS_PluginReview_init(JSContext *cx, uint32_t argc, jsval *vp);
