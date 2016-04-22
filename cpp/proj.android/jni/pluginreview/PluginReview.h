@@ -1,6 +1,6 @@
 /****************************************************************************
 
- Copyright (c) 2014-2015 Chukong Technologies
+ Copyright (c) 2014-2016 SDKBOX Inc
 
  ****************************************************************************/
 
@@ -45,7 +45,7 @@ namespace sdkbox
         /**
          *  initialize the plugin instance.
          */
-        static bool init();
+        static bool init(const char* jsonconfig = 0);
 
         /**
          * Set listener to listen for adcolony events
@@ -76,6 +76,11 @@ namespace sdkbox
          * another case is for debug
          */
         static void show(bool force = false);
+
+        /**
+         * goto rating page directly
+         */
+        static void rate();
 
         /*
          Tells `SDKbox reivew plugin` that the user performed a significant event. A significant
