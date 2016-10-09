@@ -1,8 +1,6 @@
 
 #include "PluginReviewLuaHelper.h"
 #include "PluginReview/PluginReview.h"
-#include "CCLuaEngine.h"
-#include "tolua_fix.h"
 #include "SDKBoxLuaHelper.h"
 
 class ReviewListenerLua : public sdkbox::ReviewListener {
