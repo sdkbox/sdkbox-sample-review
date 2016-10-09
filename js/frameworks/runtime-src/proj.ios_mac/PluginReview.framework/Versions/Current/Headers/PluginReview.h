@@ -10,6 +10,7 @@
 #include <string>
 #include <vector>
 #include <map>
+#include "sdkbox/Sdkbox.h"
 
 namespace sdkbox
 {
@@ -98,29 +99,55 @@ namespace sdkbox
         static void userDidSignificantEvent(bool canPromptForRating);
 
         /*
+         * if you want to use custom string when prompt. there have two ways:
+
+            1. modify res in `plugin_review_res_project` project (Recommend)
+
+            2. set your custom string in sdkbox_config.json
+
+            ```json
+            {
+                "ios": {
+                    "Review":{
+                        ...
+                        "promptTitle":"cutom tile",
+                        "promptMessage":"this is custom message",
+                        "promptCancel":"取消",
+                        "promptRate":"rate打分",
+                        "promptRateLater":"稍后later"
+                        ...
+                    }
+                }
+            }
+            ```
+
+            this way will disable local language, if your app needn't localization, can use this way.
+         *
+         */
+        /*
          * Set customized title for alert view.
          */
-        static void setTitle(const std::string& title);
+        SDKBOX_DEPRECATED("setTitle") static void setTitle(const std::string& title);
 
         /*
          * Set customized message for alert view.
          */
-        static void setMessage(const std::string& message);
+        SDKBOX_DEPRECATED("setMessage") static void setMessage(const std::string& message);
 
         /*
          * Set customized cancel button title for alert view.
          */
-        static void setCancelButtonTitle(const std::string& cancelTitle);
+        SDKBOX_DEPRECATED("setCancelButtonTitle") static void setCancelButtonTitle(const std::string& cancelTitle);
 
         /*
          * Set customized rate button title for alert view.
          */
-        static void setRateButtonTitle(const std::string& rateTitle);
+        SDKBOX_DEPRECATED("setRateButtonTitle") static void setRateButtonTitle(const std::string& rateTitle);
 
         /*
          * Set customized rate later button title for alert view.
          */
-        static void setRateLaterButtonTitle(const std::string& rateLaterTitle);
+        SDKBOX_DEPRECATED("setRateLaterButtonTitle") static void setRateLaterButtonTitle(const std::string& rateLaterTitle);
 
     };
 }

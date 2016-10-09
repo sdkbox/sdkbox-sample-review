@@ -1,21 +1,14 @@
 #include "PluginReviewJSHelper.h"
-#include "cocos2d_specifics.hpp"
 #include "PluginReview/PluginReview.h"
 #include "SDKBoxJSHelper.h"
 
 extern JSObject* jsb_sdkbox_PluginReview_prototype;
 static JSContext* s_cx = nullptr;
 
-class ReviewListenerJS : public sdkbox::ReviewListener {
-private:
-    JSObject* _JSDelegate;
+class ReviewListenerJS : public sdkbox::ReviewListener, public sdkbox::JSListenerBase
+{
 public:
-    void setJSDelegate(JSObject* delegate) {
-        _JSDelegate = delegate;
-    }
-
-    JSObject* getJSDelegate() {
-        return _JSDelegate;
+    ReviewListenerJS():sdkbox::JSListenerBase() {
     }
 
     void onDisplayAlert() {
@@ -42,7 +35,7 @@ private:
         JSContext* cx = s_cx;
         const char* func_name = fName;
 
-        JS::RootedObject obj(cx, _JSDelegate);
+        JS::RootedObject obj(cx, getJSDelegate());
         JSAutoCompartment ac(cx, obj);
 
 #if defined(MOZJS_MAJOR_VERSION)
@@ -119,7 +112,7 @@ JSBool js_PluginReviewJS_PluginReview_setListener(JSContext *cx, uint32_t argc, 
 
         JSB_PRECONDITION2(ok, cx, false, "js_PluginReviewJS_PluginReview_setIAPListener : Error processing arguments");
         ReviewListenerJS* wrapper = new ReviewListenerJS();
-        wrapper->setJSDelegate(tmpObj);
+        wrapper->setJSDelegate(args.get(0));
         sdkbox::PluginReview::setListener(wrapper);
 
         args.rval().setUndefined();

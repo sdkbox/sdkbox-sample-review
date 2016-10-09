@@ -24,19 +24,9 @@ bool js_PluginReviewJS_PluginReview_userDidSignificantEvent(JSContext *cx, uint3
 JSBool js_PluginReviewJS_PluginReview_userDidSignificantEvent(JSContext *cx, uint32_t argc, jsval *vp);
 #endif
 #if defined(MOZJS_MAJOR_VERSION)
-bool js_PluginReviewJS_PluginReview_setRateButtonTitle(JSContext *cx, uint32_t argc, jsval *vp);
-#elif defined(JS_VERSION)
-JSBool js_PluginReviewJS_PluginReview_setRateButtonTitle(JSContext *cx, uint32_t argc, jsval *vp);
-#endif
-#if defined(MOZJS_MAJOR_VERSION)
 bool js_PluginReviewJS_PluginReview_show(JSContext *cx, uint32_t argc, jsval *vp);
 #elif defined(JS_VERSION)
 JSBool js_PluginReviewJS_PluginReview_show(JSContext *cx, uint32_t argc, jsval *vp);
-#endif
-#if defined(MOZJS_MAJOR_VERSION)
-bool js_PluginReviewJS_PluginReview_setTitle(JSContext *cx, uint32_t argc, jsval *vp);
-#elif defined(JS_VERSION)
-JSBool js_PluginReviewJS_PluginReview_setTitle(JSContext *cx, uint32_t argc, jsval *vp);
 #endif
 #if defined(MOZJS_MAJOR_VERSION)
 bool js_PluginReviewJS_PluginReview_rate(JSContext *cx, uint32_t argc, jsval *vp);
@@ -47,21 +37,6 @@ JSBool js_PluginReviewJS_PluginReview_rate(JSContext *cx, uint32_t argc, jsval *
 bool js_PluginReviewJS_PluginReview_init(JSContext *cx, uint32_t argc, jsval *vp);
 #elif defined(JS_VERSION)
 JSBool js_PluginReviewJS_PluginReview_init(JSContext *cx, uint32_t argc, jsval *vp);
-#endif
-#if defined(MOZJS_MAJOR_VERSION)
-bool js_PluginReviewJS_PluginReview_setRateLaterButtonTitle(JSContext *cx, uint32_t argc, jsval *vp);
-#elif defined(JS_VERSION)
-JSBool js_PluginReviewJS_PluginReview_setRateLaterButtonTitle(JSContext *cx, uint32_t argc, jsval *vp);
-#endif
-#if defined(MOZJS_MAJOR_VERSION)
-bool js_PluginReviewJS_PluginReview_setMessage(JSContext *cx, uint32_t argc, jsval *vp);
-#elif defined(JS_VERSION)
-JSBool js_PluginReviewJS_PluginReview_setMessage(JSContext *cx, uint32_t argc, jsval *vp);
-#endif
-#if defined(MOZJS_MAJOR_VERSION)
-bool js_PluginReviewJS_PluginReview_setCancelButtonTitle(JSContext *cx, uint32_t argc, jsval *vp);
-#elif defined(JS_VERSION)
-JSBool js_PluginReviewJS_PluginReview_setCancelButtonTitle(JSContext *cx, uint32_t argc, jsval *vp);
 #endif
 #endif
 

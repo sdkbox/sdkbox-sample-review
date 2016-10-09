@@ -1,5 +1,4 @@
 #include "PluginReviewJS.hpp"
-#include "cocos2d_specifics.hpp"
 #include "PluginReview/PluginReview.h"
 #include "SDKBoxJSHelper.h"
 #include "sdkbox/Sdkbox.h"
@@ -22,7 +21,7 @@ static bool dummy_constructor(JSContext *cx, uint32_t argc, jsval *vp) {
         typeClass = typeMapIter->second;
         CCASSERT(typeClass, "The value is null.");
 
-#if (COCOS2D_VERSION >= 0x00031000)
+#if (SDKBOX_COCOS_JSB_VERSION >= 2)
         JS::RootedObject proto(cx, typeClass->proto.ref());
         JS::RootedObject parent(cx, typeClass->parentProto.ref());
 #else
@@ -30,7 +29,7 @@ static bool dummy_constructor(JSContext *cx, uint32_t argc, jsval *vp) {
         JS::RootedObject parent(cx, typeClass->parentProto.get());
 #endif
         JS::RootedObject _tmp(cx, JS_NewObject(cx, typeClass->jsclass, proto, parent));
-        
+
         T* cobj = new T();
         js_proxy_t *pp = jsb_new_proxy(cobj, _tmp);
         AddObjectRoot(cx, &pp->obj);
@@ -49,7 +48,7 @@ static bool js_is_native_obj(JSContext *cx, uint32_t argc, jsval *vp)
 {
     JS::CallArgs args = JS::CallArgsFromVp(argc, vp);
     args.rval().setBoolean(true);
-    return true;    
+    return true;
 }
 #else
 template<class T>
@@ -84,7 +83,7 @@ static bool empty_constructor(JSContext *cx, uint32_t argc, jsval *vp) {
 static bool js_is_native_obj(JSContext *cx, JS::HandleObject obj, JS::HandleId id, JS::MutableHandleValue vp)
 {
     vp.set(BOOLEAN_TO_JSVAL(true));
-    return true;    
+    return true;
 }
 #endif
 #elif defined(JS_VERSION)
@@ -144,39 +143,6 @@ JSBool js_PluginReviewJS_PluginReview_userDidSignificantEvent(JSContext *cx, uin
 }
 #endif
 #if defined(MOZJS_MAJOR_VERSION)
-bool js_PluginReviewJS_PluginReview_setRateButtonTitle(JSContext *cx, uint32_t argc, jsval *vp)
-{
-    JS::CallArgs args = JS::CallArgsFromVp(argc, vp);
-    bool ok = true;
-    if (argc == 1) {
-        std::string arg0;
-        ok &= jsval_to_std_string(cx, args.get(0), &arg0);
-        JSB_PRECONDITION2(ok, cx, false, "js_PluginReviewJS_PluginReview_setRateButtonTitle : Error processing arguments");
-        sdkbox::PluginReview::setRateButtonTitle(arg0);
-        args.rval().setUndefined();
-        return true;
-    }
-    JS_ReportError(cx, "js_PluginReviewJS_PluginReview_setRateButtonTitle : wrong number of arguments");
-    return false;
-}
-#elif defined(JS_VERSION)
-JSBool js_PluginReviewJS_PluginReview_setRateButtonTitle(JSContext *cx, uint32_t argc, jsval *vp)
-{
-    jsval *argv = JS_ARGV(cx, vp);
-    JSBool ok = JS_TRUE;
-    if (argc == 1) {
-        std::string arg0;
-        ok &= jsval_to_std_string(cx, argv[0], &arg0);
-        JSB_PRECONDITION2(ok, cx, JS_FALSE, "Error processing arguments");
-        sdkbox::PluginReview::setRateButtonTitle(arg0);
-        JS_SET_RVAL(cx, vp, JSVAL_VOID);
-        return JS_TRUE;
-    }
-    JS_ReportError(cx, "wrong number of arguments");
-    return JS_FALSE;
-}
-#endif
-#if defined(MOZJS_MAJOR_VERSION)
 bool js_PluginReviewJS_PluginReview_show(JSContext *cx, uint32_t argc, jsval *vp)
 {
     JS::CallArgs args = JS::CallArgsFromVp(argc, vp);
@@ -212,39 +178,6 @@ JSBool js_PluginReviewJS_PluginReview_show(JSContext *cx, uint32_t argc, jsval *
         arg0 = JS::ToBoolean(argv[0]);
         JSB_PRECONDITION2(ok, cx, JS_FALSE, "Error processing arguments");
         sdkbox::PluginReview::show(arg0);
-        JS_SET_RVAL(cx, vp, JSVAL_VOID);
-        return JS_TRUE;
-    }
-    JS_ReportError(cx, "wrong number of arguments");
-    return JS_FALSE;
-}
-#endif
-#if defined(MOZJS_MAJOR_VERSION)
-bool js_PluginReviewJS_PluginReview_setTitle(JSContext *cx, uint32_t argc, jsval *vp)
-{
-    JS::CallArgs args = JS::CallArgsFromVp(argc, vp);
-    bool ok = true;
-    if (argc == 1) {
-        std::string arg0;
-        ok &= jsval_to_std_string(cx, args.get(0), &arg0);
-        JSB_PRECONDITION2(ok, cx, false, "js_PluginReviewJS_PluginReview_setTitle : Error processing arguments");
-        sdkbox::PluginReview::setTitle(arg0);
-        args.rval().setUndefined();
-        return true;
-    }
-    JS_ReportError(cx, "js_PluginReviewJS_PluginReview_setTitle : wrong number of arguments");
-    return false;
-}
-#elif defined(JS_VERSION)
-JSBool js_PluginReviewJS_PluginReview_setTitle(JSContext *cx, uint32_t argc, jsval *vp)
-{
-    jsval *argv = JS_ARGV(cx, vp);
-    JSBool ok = JS_TRUE;
-    if (argc == 1) {
-        std::string arg0;
-        ok &= jsval_to_std_string(cx, argv[0], &arg0);
-        JSB_PRECONDITION2(ok, cx, JS_FALSE, "Error processing arguments");
-        sdkbox::PluginReview::setTitle(arg0);
         JS_SET_RVAL(cx, vp, JSVAL_VOID);
         return JS_TRUE;
     }
@@ -327,105 +260,6 @@ JSBool js_PluginReviewJS_PluginReview_init(JSContext *cx, uint32_t argc, jsval *
     return JS_FALSE;
 }
 #endif
-#if defined(MOZJS_MAJOR_VERSION)
-bool js_PluginReviewJS_PluginReview_setRateLaterButtonTitle(JSContext *cx, uint32_t argc, jsval *vp)
-{
-    JS::CallArgs args = JS::CallArgsFromVp(argc, vp);
-    bool ok = true;
-    if (argc == 1) {
-        std::string arg0;
-        ok &= jsval_to_std_string(cx, args.get(0), &arg0);
-        JSB_PRECONDITION2(ok, cx, false, "js_PluginReviewJS_PluginReview_setRateLaterButtonTitle : Error processing arguments");
-        sdkbox::PluginReview::setRateLaterButtonTitle(arg0);
-        args.rval().setUndefined();
-        return true;
-    }
-    JS_ReportError(cx, "js_PluginReviewJS_PluginReview_setRateLaterButtonTitle : wrong number of arguments");
-    return false;
-}
-#elif defined(JS_VERSION)
-JSBool js_PluginReviewJS_PluginReview_setRateLaterButtonTitle(JSContext *cx, uint32_t argc, jsval *vp)
-{
-    jsval *argv = JS_ARGV(cx, vp);
-    JSBool ok = JS_TRUE;
-    if (argc == 1) {
-        std::string arg0;
-        ok &= jsval_to_std_string(cx, argv[0], &arg0);
-        JSB_PRECONDITION2(ok, cx, JS_FALSE, "Error processing arguments");
-        sdkbox::PluginReview::setRateLaterButtonTitle(arg0);
-        JS_SET_RVAL(cx, vp, JSVAL_VOID);
-        return JS_TRUE;
-    }
-    JS_ReportError(cx, "wrong number of arguments");
-    return JS_FALSE;
-}
-#endif
-#if defined(MOZJS_MAJOR_VERSION)
-bool js_PluginReviewJS_PluginReview_setMessage(JSContext *cx, uint32_t argc, jsval *vp)
-{
-    JS::CallArgs args = JS::CallArgsFromVp(argc, vp);
-    bool ok = true;
-    if (argc == 1) {
-        std::string arg0;
-        ok &= jsval_to_std_string(cx, args.get(0), &arg0);
-        JSB_PRECONDITION2(ok, cx, false, "js_PluginReviewJS_PluginReview_setMessage : Error processing arguments");
-        sdkbox::PluginReview::setMessage(arg0);
-        args.rval().setUndefined();
-        return true;
-    }
-    JS_ReportError(cx, "js_PluginReviewJS_PluginReview_setMessage : wrong number of arguments");
-    return false;
-}
-#elif defined(JS_VERSION)
-JSBool js_PluginReviewJS_PluginReview_setMessage(JSContext *cx, uint32_t argc, jsval *vp)
-{
-    jsval *argv = JS_ARGV(cx, vp);
-    JSBool ok = JS_TRUE;
-    if (argc == 1) {
-        std::string arg0;
-        ok &= jsval_to_std_string(cx, argv[0], &arg0);
-        JSB_PRECONDITION2(ok, cx, JS_FALSE, "Error processing arguments");
-        sdkbox::PluginReview::setMessage(arg0);
-        JS_SET_RVAL(cx, vp, JSVAL_VOID);
-        return JS_TRUE;
-    }
-    JS_ReportError(cx, "wrong number of arguments");
-    return JS_FALSE;
-}
-#endif
-#if defined(MOZJS_MAJOR_VERSION)
-bool js_PluginReviewJS_PluginReview_setCancelButtonTitle(JSContext *cx, uint32_t argc, jsval *vp)
-{
-    JS::CallArgs args = JS::CallArgsFromVp(argc, vp);
-    bool ok = true;
-    if (argc == 1) {
-        std::string arg0;
-        ok &= jsval_to_std_string(cx, args.get(0), &arg0);
-        JSB_PRECONDITION2(ok, cx, false, "js_PluginReviewJS_PluginReview_setCancelButtonTitle : Error processing arguments");
-        sdkbox::PluginReview::setCancelButtonTitle(arg0);
-        args.rval().setUndefined();
-        return true;
-    }
-    JS_ReportError(cx, "js_PluginReviewJS_PluginReview_setCancelButtonTitle : wrong number of arguments");
-    return false;
-}
-#elif defined(JS_VERSION)
-JSBool js_PluginReviewJS_PluginReview_setCancelButtonTitle(JSContext *cx, uint32_t argc, jsval *vp)
-{
-    jsval *argv = JS_ARGV(cx, vp);
-    JSBool ok = JS_TRUE;
-    if (argc == 1) {
-        std::string arg0;
-        ok &= jsval_to_std_string(cx, argv[0], &arg0);
-        JSB_PRECONDITION2(ok, cx, JS_FALSE, "Error processing arguments");
-        sdkbox::PluginReview::setCancelButtonTitle(arg0);
-        JS_SET_RVAL(cx, vp, JSVAL_VOID);
-        return JS_TRUE;
-    }
-    JS_ReportError(cx, "wrong number of arguments");
-    return JS_FALSE;
-}
-#endif
 
 
 void js_PluginReviewJS_PluginReview_finalize(JSFreeOp *fop, JSObject *obj) {
@@ -433,7 +267,7 @@ void js_PluginReviewJS_PluginReview_finalize(JSFreeOp *fop, JSObject *obj) {
     js_proxy_t* nproxy;
     js_proxy_t* jsproxy;
 
-#if (COCOS2D_VERSION >= 0x00031000)
+#if (SDKBOX_COCOS_JSB_VERSION >= 2)
     JSContext *cx = ScriptingCore::getInstance()->getGlobalContext();
     JS::RootedObject jsobj(cx, obj);
     jsproxy = jsb_get_js_proxy(jsobj);
@@ -447,7 +281,7 @@ void js_PluginReviewJS_PluginReview_finalize(JSFreeOp *fop, JSObject *obj) {
         sdkbox::PluginReview *nobj = static_cast<sdkbox::PluginReview *>(nproxy->ptr);
         if (nobj)
             delete nobj;
-        
+
         jsb_remove_proxy(nproxy, jsproxy);
     }
 }
@@ -478,14 +312,9 @@ void js_register_PluginReviewJS_PluginReview(JSContext *cx, JS::HandleObject glo
 
     static JSFunctionSpec st_funcs[] = {
         JS_FN("userDidSignificantEvent", js_PluginReviewJS_PluginReview_userDidSignificantEvent, 1, JSPROP_PERMANENT | JSPROP_ENUMERATE),
-        JS_FN("setRateButtonTitle", js_PluginReviewJS_PluginReview_setRateButtonTitle, 1, JSPROP_PERMANENT | JSPROP_ENUMERATE),
         JS_FN("show", js_PluginReviewJS_PluginReview_show, 0, JSPROP_PERMANENT | JSPROP_ENUMERATE),
-        JS_FN("setTitle", js_PluginReviewJS_PluginReview_setTitle, 1, JSPROP_PERMANENT | JSPROP_ENUMERATE),
         JS_FN("rate", js_PluginReviewJS_PluginReview_rate, 0, JSPROP_PERMANENT | JSPROP_ENUMERATE),
         JS_FN("init", js_PluginReviewJS_PluginReview_init, 0, JSPROP_PERMANENT | JSPROP_ENUMERATE),
-        JS_FN("setRateLaterButtonTitle", js_PluginReviewJS_PluginReview_setRateLaterButtonTitle, 1, JSPROP_PERMANENT | JSPROP_ENUMERATE),
-        JS_FN("setMessage", js_PluginReviewJS_PluginReview_setMessage, 1, JSPROP_PERMANENT | JSPROP_ENUMERATE),
-        JS_FN("setCancelButtonTitle", js_PluginReviewJS_PluginReview_setCancelButtonTitle, 1, JSPROP_PERMANENT | JSPROP_ENUMERATE),
         JS_FS_END
     };
 
@@ -500,11 +329,11 @@ void js_register_PluginReviewJS_PluginReview(JSContext *cx, JS::HandleObject glo
         st_funcs);
     // make the class enumerable in the registered namespace
 //  bool found;
-//FIXME: Removed in Firefox v27 
+//FIXME: Removed in Firefox v27
 //  JS_SetPropertyAttributes(cx, global, "PluginReview", JSPROP_ENUMERATE | JSPROP_READONLY, &found);
 
     // add the proto and JSClass to the type->js info hash table
-#if (COCOS2D_VERSION >= 0x00031000)
+#if (SDKBOX_COCOS_JSB_VERSION >= 2)
     JS::RootedObject proto(cx, jsb_sdkbox_PluginReview_prototype);
     jsb_register_class<sdkbox::PluginReview>(cx, jsb_sdkbox_PluginReview_class, proto, JS::NullPtr());
 #else
@@ -546,14 +375,9 @@ void js_register_PluginReviewJS_PluginReview(JSContext *cx, JSObject *global) {
 
     static JSFunctionSpec st_funcs[] = {
         JS_FN("userDidSignificantEvent", js_PluginReviewJS_PluginReview_userDidSignificantEvent, 1, JSPROP_PERMANENT | JSPROP_ENUMERATE),
-        JS_FN("setRateButtonTitle", js_PluginReviewJS_PluginReview_setRateButtonTitle, 1, JSPROP_PERMANENT | JSPROP_ENUMERATE),
         JS_FN("show", js_PluginReviewJS_PluginReview_show, 0, JSPROP_PERMANENT | JSPROP_ENUMERATE),
-        JS_FN("setTitle", js_PluginReviewJS_PluginReview_setTitle, 1, JSPROP_PERMANENT | JSPROP_ENUMERATE),
         JS_FN("rate", js_PluginReviewJS_PluginReview_rate, 0, JSPROP_PERMANENT | JSPROP_ENUMERATE),
         JS_FN("init", js_PluginReviewJS_PluginReview_init, 0, JSPROP_PERMANENT | JSPROP_ENUMERATE),
-        JS_FN("setRateLaterButtonTitle", js_PluginReviewJS_PluginReview_setRateLaterButtonTitle, 1, JSPROP_PERMANENT | JSPROP_ENUMERATE),
-        JS_FN("setMessage", js_PluginReviewJS_PluginReview_setMessage, 1, JSPROP_PERMANENT | JSPROP_ENUMERATE),
-        JS_FN("setCancelButtonTitle", js_PluginReviewJS_PluginReview_setCancelButtonTitle, 1, JSPROP_PERMANENT | JSPROP_ENUMERATE),
         JS_FS_END
     };
 
@@ -568,7 +392,7 @@ void js_register_PluginReviewJS_PluginReview(JSContext *cx, JSObject *global) {
         st_funcs);
     // make the class enumerable in the registered namespace
 //  bool found;
-//FIXME: Removed in Firefox v27 
+//FIXME: Removed in Firefox v27
 //  JS_SetPropertyAttributes(cx, global, "PluginReview", JSPROP_ENUMERATE | JSPROP_READONLY, &found);
 
     // add the proto and JSClass to the type->js info hash table
@@ -605,14 +429,9 @@ void js_register_PluginReviewJS_PluginReview(JSContext *cx, JSObject *global) {
 
     static JSFunctionSpec st_funcs[] = {
         JS_FN("userDidSignificantEvent", js_PluginReviewJS_PluginReview_userDidSignificantEvent, 1, JSPROP_PERMANENT | JSPROP_ENUMERATE),
-        JS_FN("setRateButtonTitle", js_PluginReviewJS_PluginReview_setRateButtonTitle, 1, JSPROP_PERMANENT | JSPROP_ENUMERATE),
         JS_FN("show", js_PluginReviewJS_PluginReview_show, 0, JSPROP_PERMANENT | JSPROP_ENUMERATE),
-        JS_FN("setTitle", js_PluginReviewJS_PluginReview_setTitle, 1, JSPROP_PERMANENT | JSPROP_ENUMERATE),
         JS_FN("rate", js_PluginReviewJS_PluginReview_rate, 0, JSPROP_PERMANENT | JSPROP_ENUMERATE),
         JS_FN("init", js_PluginReviewJS_PluginReview_init, 0, JSPROP_PERMANENT | JSPROP_ENUMERATE),
-        JS_FN("setRateLaterButtonTitle", js_PluginReviewJS_PluginReview_setRateLaterButtonTitle, 1, JSPROP_PERMANENT | JSPROP_ENUMERATE),
-        JS_FN("setMessage", js_PluginReviewJS_PluginReview_setMessage, 1, JSPROP_PERMANENT | JSPROP_ENUMERATE),
-        JS_FN("setCancelButtonTitle", js_PluginReviewJS_PluginReview_setCancelButtonTitle, 1, JSPROP_PERMANENT | JSPROP_ENUMERATE),
         JS_FS_END
     };
 

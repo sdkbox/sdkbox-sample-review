@@ -64,12 +64,25 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		05F94A57A0D8414071EEACD6 /* fi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fi; path = plugin_review_res_bundle/fi.lproj/SdkboxReviewResLocalizable.strings; sourceTree = SOURCE_ROOT; };
+		07F24294B74A124AFD391704 /* da */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = da; path = plugin_review_res_bundle/da.lproj/SdkboxReviewResLocalizable.strings; sourceTree = SOURCE_ROOT; };
+		0F1B43C498B7AD74E71AC1DC /* he */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = he; path = plugin_review_res_bundle/he.lproj/SdkboxReviewResLocalizable.strings; sourceTree = SOURCE_ROOT; };
+		1446420C902F58D5AAC3C1F2 /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = plugin_review_res_bundle/uk.lproj/SdkboxReviewResLocalizable.strings; sourceTree = SOURCE_ROOT; };
 		1A1A081B18C9DF05005C6854 /* project.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = project.json; path = ../../../project.json; sourceTree = "<group>"; };
 		1A6BF21418C9DB5900FB0E1C /* main.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = main.js; path = ../../../main.js; sourceTree = "<group>"; };
 		1A82F5FA169AC92500C4B13A /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = compiled.mach-o.dylib; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		1A96A4F2174A3432008653A9 /* libcurl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcurl.a; path = "$(SRCROOT)/../../../../../sdkbox-cocos2d-x-binary/cocos2dx/platform/third_party/ios/libraries/libcurl.a"; sourceTree = "<group>"; };
+		215E46738F2761E20C69D065 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = zh-Hans; path = plugin_review_res_bundle/zh-Hans.lproj/SdkboxReviewResLocalizable.strings; sourceTree = SOURCE_ROOT; };
+		21804E109C67AF6EC57502CF /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = plugin_review_res_bundle/ar.lproj/SdkboxReviewResLocalizable.strings; sourceTree = SOURCE_ROOT; };
 		25314D7F96A5964397743D54 /* libjscocos2d iOS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libjscocos2d iOS.a"; path = "$(SRCROOT)/../../../../../sdkbox-cocos2d-x-binary/prebuilt/ios/libjscocos2d iOS.a"; sourceTree = "<absolute>"; };
+		268D4E6095F9764B73A312BB /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = plugin_review_res_bundle/ru.lproj/SdkboxReviewResLocalizable.strings; sourceTree = SOURCE_ROOT; };
+		2AF549FDAD4BB7A5B843B25E /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = plugin_review_res_bundle/ja.lproj/SdkboxReviewResLocalizable.strings; sourceTree = SOURCE_ROOT; };
 		30624DCFB9EFF39BE7A2CB5B /* PluginReviewJS.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = PluginReviewJS.cpp; path = ../Classes/PluginReviewJS.cpp; sourceTree = SOURCE_ROOT; };
+		30FD4C30960594832C658B3F /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = plugin_review_res_bundle/vi.lproj/SdkboxReviewResLocalizable.strings; sourceTree = SOURCE_ROOT; };
+		37A44EA7B856666CCAD9DAC7 /* sk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sk; path = plugin_review_res_bundle/sk.lproj/SdkboxReviewResLocalizable.strings; sourceTree = SOURCE_ROOT; };
+		387D47B2A1BD41ACB78475ED /* ro */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ro; path = plugin_review_res_bundle/ro.lproj/SdkboxReviewResLocalizable.strings; sourceTree = SOURCE_ROOT; };
+		396546E2ACC95B745EF958A0 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = plugin_review_res_bundle/pl.lproj/SdkboxReviewResLocalizable.strings; sourceTree = SOURCE_ROOT; };
+		434B4C568F110AE8F77B3143 /* id */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = id; path = plugin_review_res_bundle/id.lproj/SdkboxReviewResLocalizable.strings; sourceTree = SOURCE_ROOT; };
 		502380DB17EBB88200990C9B /* libcurl.dylib */ = {isa = PBXFileReference; lastKnownFileType = compiled.mach-o.dylib; name = libcurl.dylib; path = usr/lib/libcurl.dylib; sourceTree = SDKROOT; };
 		5091731417ECDF7A00D62437 /* Icon-29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon-29.png; path = ios/Icon-29.png; sourceTree = "<group>"; };
 		5091731517ECDF7A00D62437 /* Icon-40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon-40.png; path = ios/Icon-40.png; sourceTree = "<group>"; };
@@ -100,10 +113,14 @@
 		526041819F61614826BB19BD /* libcocos2d iOS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libcocos2d iOS.a"; path = "$(SRCROOT)/../../../../../sdkbox-cocos2d-x-binary/prebuilt/ios/libcocos2d iOS.a"; sourceTree = "<absolute>"; };
 		55034C4CA67794313778972E /* SDKBoxJSHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDKBoxJSHelper.h; path = ../Classes/SDKBoxJSHelper.h; sourceTree = SOURCE_ROOT; };
 		57B54DA4973CD76829AB161D /* PluginReviewJSHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PluginReviewJSHelper.h; path = ../Classes/PluginReviewJSHelper.h; sourceTree = SOURCE_ROOT; };
+		585A438580E920D3994AE5BD /* el */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = el; path = plugin_review_res_bundle/el.lproj/SdkboxReviewResLocalizable.strings; sourceTree = SOURCE_ROOT; };
 		59464AC0BB204DFBB8C305B2 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/AdSupport.framework; sourceTree = DEVELOPER_DIR; };
 		671A491884E0C7533ED0085C /* script */ = {isa = PBXFileReference; lastKnownFileType = "?"; name = script; path = ../../../script; sourceTree = "<group>"; };
 		6C874194AE78D21009F42779 /* PluginReviewJS.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PluginReviewJS.hpp; path = ../Classes/PluginReviewJS.hpp; sourceTree = SOURCE_ROOT; };
+		7098497CBA10C71A099BEB24 /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = cs; path = plugin_review_res_bundle/cs.lproj/SdkboxReviewResLocalizable.strings; sourceTree = SOURCE_ROOT; };
 		87D4C4441AB2187000F68C44 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		8BFB484ABC679748B64AC451 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt-BR; path = plugin_review_res_bundle/pt-BR.lproj/SdkboxReviewResLocalizable.strings; sourceTree = SOURCE_ROOT; };
+		901E42CAB0C796422479A1C0 /* nb */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nb; path = plugin_review_res_bundle/nb.lproj/SdkboxReviewResLocalizable.strings; sourceTree = SOURCE_ROOT; };
 		92EB40F88B324DCE155389D5 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/StoreKit.framework; sourceTree = DEVELOPER_DIR; };
 		9A3363581CC9FAD200C8C7C0 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/SdkboxReviewResLocalizable.strings; sourceTree = "<group>"; };
 		9A3363591CC9FAD200C8C7C0 /* ca */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ca; path = ca.lproj/SdkboxReviewResLocalizable.strings; sourceTree = "<group>"; };
@@ -137,6 +154,7 @@
 		9A3363751CC9FAD200C8C7C0 /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/SdkboxReviewResLocalizable.strings; sourceTree = "<group>"; };
 		9A3363761CC9FAD200C8C7C0 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = zh-Hans; path = zh-Hans.lproj/SdkboxReviewResLocalizable.strings; sourceTree = "<group>"; };
 		9A3363771CC9FAD200C8C7C0 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = zh-Hant; path = zh-Hant.lproj/SdkboxReviewResLocalizable.strings; sourceTree = "<group>"; };
+		9E2549D5A93C9947430AB5CF /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = plugin_review_res_bundle/fr.lproj/SdkboxReviewResLocalizable.strings; sourceTree = SOURCE_ROOT; };
 		9F20C9E11A5BBE85006FB50B /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.1.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
 		9FFEB99F1A6AB7F70095C43A /* CodeIDESupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CodeIDESupport.h; sourceTree = "<group>"; };
 		9FFEB9A01A6AB7F70095C43A /* lang */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = lang; sourceTree = "<group>"; };
@@ -145,6 +163,7 @@
 		9FFEB9A71A6AB7F70095C43A /* js_module_register.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = js_module_register.h; sourceTree = "<group>"; };
 		9FFEB9C01A6B86360095C43A /* SimpleConfigParser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SimpleConfigParser.cpp; sourceTree = "<group>"; };
 		9FFEB9C11A6B86360095C43A /* SimpleConfigParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleConfigParser.h; sourceTree = "<group>"; };
+		A3124DB18D0A438A6A103ACB /* hu */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hu; path = plugin_review_res_bundle/hu.lproj/SdkboxReviewResLocalizable.strings; sourceTree = SOURCE_ROOT; };
 		A5CA41BA855D271AF78D2FA1 /* SDKBoxJSHelper.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = SDKBoxJSHelper.cpp; path = ../Classes/SDKBoxJSHelper.cpp; sourceTree = SOURCE_ROOT; };
 		A922753D1517C094001B78AA /* review_js-mobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = review_js-mobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A92275411517C094001B78AA /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -156,20 +175,33 @@
 		A922754D1517C094001B78AA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A922754F1517C094001B78AA /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		AB7B497C8BED0BDDF5847C06 /* PluginReview.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PluginReview.framework; sourceTree = SOURCE_ROOT; };
+		AFB545A58FB91DA4625CBA0B /* th */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = th; path = plugin_review_res_bundle/th.lproj/SdkboxReviewResLocalizable.strings; sourceTree = SOURCE_ROOT; };
 		B4F84DEA823D292F05828CE2 /* PluginReviewJSHelper.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = PluginReviewJSHelper.cpp; path = ../Classes/PluginReviewJSHelper.cpp; sourceTree = SOURCE_ROOT; };
 		BA4E718619EB6E7900932425 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.0.sdk/System/Library/Frameworks/MediaPlayer.framework; sourceTree = DEVELOPER_DIR; };
 		C03780EA18BEE0E400FE4F13 /* src */ = {isa = PBXFileReference; lastKnownFileType = folder; name = src; path = ../../../src; sourceTree = "<group>"; };
 		C05D1C161923467600B808A4 /* config.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = config.json; path = ../../../config.json; sourceTree = "<group>"; };
 		C0799CB518BAE62000E9C828 /* res */ = {isa = PBXFileReference; lastKnownFileType = folder; name = res; path = ../../../res; sourceTree = "<group>"; };
+		C1044DAB881B93003F287001 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = plugin_review_res_bundle/nl.lproj/SdkboxReviewResLocalizable.strings; sourceTree = SOURCE_ROOT; };
+		C9B7469B919CC8434C191538 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = plugin_review_res_bundle/es.lproj/SdkboxReviewResLocalizable.strings; sourceTree = SOURCE_ROOT; };
+		CAB54163ABD722B113424F07 /* ca */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ca; path = plugin_review_res_bundle/ca.lproj/SdkboxReviewResLocalizable.strings; sourceTree = SOURCE_ROOT; };
+		CB864C08B26E35F13E992A91 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = zh-Hant; path = plugin_review_res_bundle/zh-Hant.lproj/SdkboxReviewResLocalizable.strings; sourceTree = SOURCE_ROOT; };
 		D454520B156E22BD00887EB5 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = compiled.mach-o.dylib; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		D4545215156E28EF00887EB5 /* AppDelegate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AppDelegate.cpp; sourceTree = "<group>"; };
 		D4545216156E28EF00887EB5 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D6B061231803AB9F0077942B /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/System/Library/Frameworks/CoreMotion.framework; sourceTree = DEVELOPER_DIR; };
+		D8014348B29EB4AE1B6A3FAF /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = plugin_review_res_bundle/it.lproj/SdkboxReviewResLocalizable.strings; sourceTree = SOURCE_ROOT; };
+		D917484AB1ABAF6F9ED69CC3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = plugin_review_res_bundle/en.lproj/SdkboxReviewResLocalizable.strings; sourceTree = SOURCE_ROOT; };
 		D9504EBCA44358D51647FA02 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
 		DB4942DC89CF5E304809354C /* libsimulator iOS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libsimulator iOS.a"; path = "$(SRCROOT)/../../../../../sdkbox-cocos2d-x-binary/prebuilt/ios/libsimulator iOS.a"; sourceTree = "<absolute>"; };
+		DCAD492081FF52AA173A96B8 /* ms */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ms; path = plugin_review_res_bundle/ms.lproj/SdkboxReviewResLocalizable.strings; sourceTree = SOURCE_ROOT; };
+		E1B24970934DDF2BC8E3EACF /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = plugin_review_res_bundle/sv.lproj/SdkboxReviewResLocalizable.strings; sourceTree = SOURCE_ROOT; };
 		ED545A8F1B68A25E00C3958E /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = compiled.mach-o.dylib; name = libiconv.dylib; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.4.sdk/usr/lib/libiconv.dylib; sourceTree = DEVELOPER_DIR; };
 		ED545A911B68A26600C3958E /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = compiled.mach-o.dylib; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
+		F0AA4C4CA3AFE6D893C569AA /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = plugin_review_res_bundle/de.lproj/SdkboxReviewResLocalizable.strings; sourceTree = SOURCE_ROOT; };
+		F1834BDB947215C683D79A25 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = plugin_review_res_bundle/tr.lproj/SdkboxReviewResLocalizable.strings; sourceTree = SOURCE_ROOT; };
 		F3FC4F948D154F34FEB6458D /* sdkbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = sdkbox.framework; sourceTree = SOURCE_ROOT; };
+		F8F142C1BA994399F2A64ACA /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = plugin_review_res_bundle/ko.lproj/SdkboxReviewResLocalizable.strings; sourceTree = SOURCE_ROOT; };
+		FD574059B253C5C283C5A589 /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt; path = plugin_review_res_bundle/pt.lproj/SdkboxReviewResLocalizable.strings; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -698,6 +730,38 @@
 				9A3363751CC9FAD200C8C7C0 /* vi */,
 				9A3363761CC9FAD200C8C7C0 /* zh-Hans */,
 				9A3363771CC9FAD200C8C7C0 /* zh-Hant */,
+				21804E109C67AF6EC57502CF /* ar */,
+				CAB54163ABD722B113424F07 /* ca */,
+				7098497CBA10C71A099BEB24 /* cs */,
+				07F24294B74A124AFD391704 /* da */,
+				F0AA4C4CA3AFE6D893C569AA /* de */,
+				585A438580E920D3994AE5BD /* el */,
+				D917484AB1ABAF6F9ED69CC3 /* en */,
+				C9B7469B919CC8434C191538 /* es */,
+				05F94A57A0D8414071EEACD6 /* fi */,
+				9E2549D5A93C9947430AB5CF /* fr */,
+				0F1B43C498B7AD74E71AC1DC /* he */,
+				A3124DB18D0A438A6A103ACB /* hu */,
+				434B4C568F110AE8F77B3143 /* id */,
+				D8014348B29EB4AE1B6A3FAF /* it */,
+				2AF549FDAD4BB7A5B843B25E /* ja */,
+				F8F142C1BA994399F2A64ACA /* ko */,
+				DCAD492081FF52AA173A96B8 /* ms */,
+				901E42CAB0C796422479A1C0 /* nb */,
+				C1044DAB881B93003F287001 /* nl */,
+				396546E2ACC95B745EF958A0 /* pl */,
+				8BFB484ABC679748B64AC451 /* pt-BR */,
+				FD574059B253C5C283C5A589 /* pt */,
+				387D47B2A1BD41ACB78475ED /* ro */,
+				268D4E6095F9764B73A312BB /* ru */,
+				37A44EA7B856666CCAD9DAC7 /* sk */,
+				E1B24970934DDF2BC8E3EACF /* sv */,
+				AFB545A58FB91DA4625CBA0B /* th */,
+				F1834BDB947215C683D79A25 /* tr */,
+				1446420C902F58D5AAC3C1F2 /* uk */,
+				30FD4C30960594832C658B3F /* vi */,
+				215E46738F2761E20C69D065 /* zh-Hans */,
+				CB864C08B26E35F13E992A91 /* zh-Hant */,
 			);
 			name = SdkboxReviewResLocalizable.strings;
 			sourceTree = "<group>";
