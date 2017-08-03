@@ -53,20 +53,20 @@ private:
         jsval retval;
         jsval func_handle;
 #endif
-        jsval dataVal[2];
+        JS::Value dataVal[2];
 
         if (2 == argc) {
-            dataVal[0] = c_string_to_jsval(cx, name);
-            dataVal[1] = INT_TO_JSVAL(intVal);
+            dataVal[0] = SB_CSTR_TO_JSVAL(cx, name);
+            dataVal[1] = JS::Int32Value(intVal);
         } else if (1 == argc) {
-            dataVal[0] = c_string_to_jsval(cx, name);
+            dataVal[0] = SB_CSTR_TO_JSVAL(cx, name);
         }
 
         if (JS_HasProperty(cx, obj, func_name, &hasAction) && hasAction) {
             if(!JS_GetProperty(cx, obj, func_name, &func_handle)) {
                 return;
             }
-            if(func_handle == JSVAL_VOID) {
+            if(func_handle == JS::NullValue()) {
                 return;
             }
 
@@ -90,7 +90,7 @@ private:
 
 #if defined(MOZJS_MAJOR_VERSION)
 #if MOZJS_MAJOR_VERSION >= 33
-bool js_PluginReviewJS_PluginReview_setListener(JSContext *cx, uint32_t argc, jsval *vp)
+bool js_PluginReviewJS_PluginReview_setListener(JSContext *cx, uint32_t argc, JS::Value *vp)
 #else
 bool js_PluginReviewJS_PluginReview_setListener(JSContext *cx, uint32_t argc, jsval *vp)
 #endif
@@ -112,13 +112,13 @@ JSBool js_PluginReviewJS_PluginReview_setListener(JSContext *cx, uint32_t argc, 
 
         JSB_PRECONDITION2(ok, cx, false, "js_PluginReviewJS_PluginReview_setIAPListener : Error processing arguments");
         ReviewListenerJS* wrapper = new ReviewListenerJS();
-        wrapper->setJSDelegate(args.get(0));
+        wrapper->setJSDelegate(cx, args.get(0));
         sdkbox::PluginReview::setListener(wrapper);
 
         args.rval().setUndefined();
         return true;
     }
-    JS_ReportError(cx, "js_PluginReviewJS_PluginReview_setIAPListener : wrong number of arguments");
+    JS_ReportErrorUTF8(cx, "js_PluginReviewJS_PluginReview_setIAPListener : wrong number of arguments");
     return false;
 }
 
