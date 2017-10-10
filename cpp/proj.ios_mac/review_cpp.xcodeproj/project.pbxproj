@@ -35,8 +35,8 @@
 		521A8E6419F0C34300D177D7 /* Default-667h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 521A8E6219F0C34300D177D7 /* Default-667h@2x.png */; };
 		521A8E6519F0C34300D177D7 /* Default-736h@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 521A8E6319F0C34300D177D7 /* Default-736h@3x.png */; };
 		52B47A471A53D09C004E4C60 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52B47A461A53D09B004E4C60 /* Security.framework */; };
+		848FEDB71F8CCCF3000EB07E /* libcocos2d iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 848FEDB61F8CCCF3000EB07E /* libcocos2d iOS.a */; };
 		84B18A8A1F8C627C00280FDB /* sdkbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE5E46978EC93C4756EE9E9E /* sdkbox.framework */; };
-		84DEB04F1F82A3CB0019FA34 /* libcocos2d iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 84DEB04E1F82A3CB0019FA34 /* libcocos2d iOS.a */; };
 		90134EC58F5F46329B64040D /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20464F39AFEEC86A61A08537 /* AdSupport.framework */; };
 		9A3362EC1CC9F9B000C8C7C0 /* SdkboxReviewResLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9A3362CB1CC9F9B000C8C7C0 /* SdkboxReviewResLocalizable.strings */; };
 		BA7140E0899150F3FD1B4114 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85EB4DED937480A16A658627 /* StoreKit.framework */; };
@@ -110,7 +110,7 @@
 		82614E80900CE5B8A519DE71 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = plugin_review_res_bundle/de.lproj/SdkboxReviewResLocalizable.strings; sourceTree = SOURCE_ROOT; };
 		8262943D1AAF051F00CB7CF7 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		847C4737BB87694BD4544EE6 /* res */ = {isa = PBXFileReference; lastKnownFileType = "?"; name = res; path = ../Resources/res; sourceTree = "<group>"; };
-		84DEB04E1F82A3CB0019FA34 /* libcocos2d iOS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libcocos2d iOS.a"; path = "../../../../../../../Applications/Cocos/frameworks/cocos2d-x-3.8.1/prebuilt/ios/libcocos2d iOS.a"; sourceTree = "<group>"; };
+		848FEDB61F8CCCF3000EB07E /* libcocos2d iOS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libcocos2d iOS.a"; path = "../../../sdkbox-cocos2d-x-binary/prebuilt/ios/libcocos2d iOS.a"; sourceTree = "<group>"; };
 		85EB4DED937480A16A658627 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/StoreKit.framework; sourceTree = DEVELOPER_DIR; };
 		992C402A98D610490751D972 /* el */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = el; path = plugin_review_res_bundle/el.lproj/SdkboxReviewResLocalizable.strings; sourceTree = SOURCE_ROOT; };
 		9A3362CC1CC9F9B000C8C7C0 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/SdkboxReviewResLocalizable.strings; sourceTree = "<group>"; };
@@ -182,7 +182,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84DEB04F1F82A3CB0019FA34 /* libcocos2d iOS.a in Frameworks */,
+				848FEDB71F8CCCF3000EB07E /* libcocos2d iOS.a in Frameworks */,
 				ED545A7C1B68A1F400C3958E /* libiconv.dylib in Frameworks */,
 				52B47A471A53D09C004E4C60 /* Security.framework in Frameworks */,
 				D6B0611B1803AB670077942B /* CoreMotion.framework in Frameworks */,
@@ -246,7 +246,7 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				84DEB04E1F82A3CB0019FA34 /* libcocos2d iOS.a */,
+				848FEDB61F8CCCF3000EB07E /* libcocos2d iOS.a */,
 				ED545A7D1B68A1FA00C3958E /* libiconv.dylib */,
 				ED545A7B1B68A1F400C3958E /* libiconv.dylib */,
 				8262943D1AAF051F00CB7CF7 /* Security.framework */,
@@ -573,7 +573,7 @@
 					"$(SRCROOT)/../../../sdkbox-cocos2d-x-binary/cocos/platform/ios/Simulation",
 				);
 				INFOPLIST_FILE = ios/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(SRCROOT)/../../../sdkbox-cocos2d-x-binary/prebuilt/ios",
@@ -589,7 +589,7 @@
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "$(_COCOS_HEADER_IOS_BEGIN) $(_COCOS_HEADER_IOS_END)";
-				VALID_ARCHS = "arm64 armv7";
+				VALID_ARCHS = "armv7 arm64";
 			};
 			name = Debug;
 		};
@@ -620,7 +620,7 @@
 					"$(SRCROOT)/../../../sdkbox-cocos2d-x-binary/cocos/platform/ios/Simulation",
 				);
 				INFOPLIST_FILE = ios/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(SRCROOT)/../../../sdkbox-cocos2d-x-binary/prebuilt/ios",
@@ -636,7 +636,7 @@
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "$(_COCOS_HEADER_IOS_BEGIN) $(_COCOS_HEADER_IOS_END)";
-				VALID_ARCHS = "arm64 armv7";
+				VALID_ARCHS = "armv7 arm64";
 			};
 			name = Release;
 		};
